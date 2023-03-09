@@ -1,7 +1,7 @@
 import turtle
 import threading
 import time
-from playsound import playsound
+
 
 # area de juego
 wn = turtle.Screen()
@@ -128,6 +128,11 @@ wn.onkeypress(paddle_a_up, "Up")
 wn.onkeypress(paddle_a_down, "Down")
 wn.onkeypress(init_game, "Return")
 
+wn.onkeypress(paddle_a_up, "w")
+wn.onkeypress(paddle_a_down, "s")
+wn.onkeypress(paddle_a_up, "Up")
+wn.onkeypress(paddle_a_down, "Down")
+
 while True:
     try:
         wn.update()
@@ -150,14 +155,12 @@ while True:
 
         if ball.xcor() > 390:
             score_a += 1
-            update_score()
             static = True
             time.sleep(1)
             reset_screen()
 
         if ball.xcor() < -390:
             score_b += 1
-            update_score()
             static = True
             time.sleep(1)
             reset_screen()
