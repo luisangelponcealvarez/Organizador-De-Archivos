@@ -18,21 +18,21 @@ root = tk.Tk()
 root.title('Generador de Contraseñas')
 
 # Configuración de los widgets
-length_label = tk.Label(root, text='Longitud:')
-length_label.grid(row=0, column=0, padx=10, pady=10)
+length_label = tk.Label(root, text='Longitud:', width=20)
+length_label.grid(row=0, column=0, padx=5, pady=20)
 
-var = tk.IntVar(value=12)
-length_entry = tk.Entry(root, textvariable=var, width=3)
+var = tk.IntVar(value=20)
+length_entry = tk.Entry(root, textvariable=var, width=10)
 length_entry.grid(row=0, column=1)
+#generar
+generate_button = tk.Button(root, text='Generar', command=generate_password )
+generate_button.grid(row=0, column=2, padx=1)
+#contraseña
+password_label = tk.Label(root, text='Contraseña:', width=20)
+password_label.grid(row=1, column=1, padx=1, pady=5)
 
-generate_button = tk.Button(root, text='Generar', command=generate_password)
-generate_button.grid(row=0, column=2, padx=10)
-
-password_label = tk.Label(root, text='Contraseña:')
-password_label.grid(row=1, column=0, padx=10, pady=10)
-
-password_entry = tk.Entry(root, show='')
-password_entry.grid(row=1, column=1, columnspan=2)
+password_entry = tk.Entry(root, show='',width=30)
+password_entry.grid(row=1, column=1, columnspan=1)
 
 # Ejecución del programa
 root.mainloop()
