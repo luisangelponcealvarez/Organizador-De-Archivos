@@ -41,3 +41,5 @@ Este código es útil para organizar archivos en una carpeta seleccionada por el
 5. Puede cerrar el script después de confirmar que los archivos han sido organizados.
 
 Este script es útil para mantener ordenados sus archivos según sus extensiones, lo que facilita la gestión de archivos en carpetas desordenadas.
+
+![miniatura](./miniatura.png)
