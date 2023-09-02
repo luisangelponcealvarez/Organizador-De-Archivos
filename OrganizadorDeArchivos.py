@@ -12,8 +12,33 @@ file_path = filedialog.askdirectory()
 extensions = {
     "Images": [".jpg", ".jpeg", ".png", ".gif", ".bmp"],
     "Videos": [".mp4", ".avi", ".mkv"],
-    "Audios": [".mp3", ".WAV", ".AIFF", ".FLAC", ".AAC", ".OGG", ".WMA", ".DSD", ".ALAC", ".APE"],
-    "Documentos": [".doc", ".docx", ".pdf", ".txt", ".rtf", ".odt", ".html", ".xml", ".ppt", ".pptx", ".xls", ".xlsx", ".csv"],
+    "Audios": [
+        ".mp3",
+        ".WAV",
+        ".AIFF",
+        ".FLAC",
+        ".AAC",
+        ".OGG",
+        ".WMA",
+        ".DSD",
+        ".ALAC",
+        ".APE",
+    ],
+    "Documentos": [
+        ".doc",
+        ".docx",
+        ".pdf",
+        ".txt",
+        ".rtf",
+        ".odt",
+        ".html",
+        ".xml",
+        ".ppt",
+        ".pptx",
+        ".xls",
+        ".xlsx",
+        ".csv",
+    ],
 }
 
 for category, exts in extensions.items():
