@@ -1,5 +1,0 @@
-os==2.1.4
-shutil==1.7.0
-tkinter==1.3.3
-filedialog==
-sys==1.
