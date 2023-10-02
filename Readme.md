@@ -4,33 +4,31 @@ Este código en Python utiliza la biblioteca `tkinter` para crear una interfaz g
 
 ### Pasos del código:
 
-1. Importación de las bibliotecas necesarias:
+~Clone this repository
 
-   - `os`: Para operaciones de sistema de archivos.
-   - `shutil`: Para mover los archivos a las carpetas de destino.
-   - `tkinter`: Para crear una interfaz gráfica simple.
-   - `filedialog`: Para mostrar un cuadro de diálogo de selección de carpeta.
-   - `sys`: Para gestionar la salida del programa.
+```
+git clone https://github.com/luisangelponcealvarez/OrganizadorDeArchivos.git
+```
 
-2. Creación de una ventana de diálogo de selección de carpeta utilizando `tkinter`. La ventana principal (`root`) se oculta para que solo aparezca el cuadro de diálogo.
+~Instala python desde: [Python downloads](https://www.python.org/downloads/)
 
-3. Se solicita al usuario que seleccione una carpeta de origen.
+~ Importación de las bibliotecas necesarias:
 
-4. Se definen las extensiones de archivo y las categorías en un diccionario. Cada categoría se asocia con una lista de extensiones de archivo.
-
-5. Se itera a través de las categorías y se crea una subcarpeta para cada una en la carpeta de destino seleccionada. Si la subcarpeta ya existe, no se crea una nueva.
-
-6. Se recorren los archivos en la carpeta de origen y se mueven a la subcarpeta correspondiente si su extensión coincide con una de las extensiones de la categoría.
-
-7. Se muestra un cuadro de diálogo de información indicando que la organización de archivos se ha completado correctamente.
-
-8. El programa se cierra utilizando `sys.exit()`.
+- `os`: Para operaciones de sistema de archivos.
+- `shutil`: Para mover los archivos a las carpetas de destino.
+- `tkinter`: Para crear una interfaz gráfica simple.
+- `filedialog`: Para mostrar un cuadro de diálogo de selección de carpeta.
+- `sys`: Para gestionar la salida del programa.
 
 Este código es útil para organizar archivos en una carpeta seleccionada por el usuario según sus extensiones, lo que facilita la gestión de archivos en un directorio desordenado.
 
-### Uso del Script
+### Pasos para usar el script
 
 1. Ejecute el script en un entorno Python.
+
+```
+py OrganizadorDeArchivos.py
+```
 
 2. Al ejecutar el script, aparecerá una ventana de diálogo que le pedirá que seleccione la carpeta que desea organizar.
 
