@@ -4,13 +4,17 @@ Este código en Python utiliza la biblioteca `tkinter` para crear una interfaz g
 
 ### Pasos del código:
 
+~ Video de como usar el script
+
+[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/5gdPYvYhZnk?si=QDVzT6dAJlueAwID)
+
+~ Instala python desde: [Python downloads](https://www.python.org/downloads/)
+
 ~Clone this repository
 
 ```
 git clone https://github.com/luisangelponcealvarez/OrganizadorDeArchivos.git
 ```
-
-~Instala python desde: [Python downloads](https://www.python.org/downloads/)
 
 ~ Importación de las bibliotecas necesarias:
 
