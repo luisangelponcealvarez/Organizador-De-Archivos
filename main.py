@@ -1,74 +1,75 @@
 import os
 import shutil
-from tkinter import Tk, Label, Button, filedialog, Checkbutton, StringVar
+import customtkinter as ctk
+from tkinter import filedialog, messagebox, StringVar
+from tkinter import *
 
 
-class FileOrganizer:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Organizador de Archivos")
-
-        self.selected_folder = ""
-        self.file_types = {
-            "Imágenes": [".jpg", ".jpeg", ".png", ".gif"],
-            "Videos": [".mp4", ".avi", ".mkv"],
-            "Audios": [".mp3", ".wav", ".ogg"],
-            "Documentos": [".doc", ".docx", ".pdf", ".txt"],
-        }
-
-        self.create_widgets()
-
-    def create_widgets(self):
-        Label(self.root, text="Seleccionar Carpeta:").grid(row=0, column=0, pady=10)
-        Button(self.root, text="Seleccionar", command=self.select_folder).grid(
-            row=0, column=1, pady=10
-        )
-
-        Label(self.root, text="Tipos de Archivos:").grid(row=1, column=0, pady=10)
-        self.checkbox_vars = {file_type: StringVar() for file_type in self.file_types}
-        for i, (file_type, extensions) in enumerate(self.file_types.items(), start=2):
-            Checkbutton(
-                self.root, text=file_type, variable=self.checkbox_vars[file_type]
-            ).grid(row=i, column=0, columnspan=2, sticky="w")
-
-        Button(self.root, text="Organizar Archivos", command=self.organize_files).grid(
-            row=i + 1, column=0, columnspan=2, pady=10
-        )
-
-    def select_folder(self):
-        self.selected_folder = filedialog.askdirectory()
-        print("Carpeta Seleccionada:", self.selected_folder)
-
-    def organize_files(self):
-        if not self.selected_folder:
-            print("Selecciona una carpeta primero.")
-            return
-
-        selected_types = [
-            file_type
-            for file_type, var in self.checkbox_vars.items()
-            if var.get() == "1"
-        ]
-        if not selected_types:
-            print("Selecciona al menos un tipo de archivo.")
-            return
-
-        for file_type in selected_types:
-            destination_folder = os.path.join(self.selected_folder, file_type)
-            os.makedirs(destination_folder, exist_ok=True)
-
-            for file_name in os.listdir(self.selected_folder):
-                file_path = os.path.join(self.selected_folder, file_name)
-                if os.path.isfile(file_path) and any(
-                    file_name.lower().endswith(ext)
-                    for ext in self.file_types[file_type]
-                ):
-                    shutil.move(file_path, os.path.join(destination_folder, file_name))
-
-        print("Archivos organizados.")
+def seleccionar_carpeta():
+    directorio = filedialog.askdirectory()
+    return directorio
 
 
-if __name__ == "__main__":
-    root = Tk()
-    app = FileOrganizer(root)
-    root.mainloop()
+def organizar_archivos(directorio, tipo_archivo):
+    for filename in os.listdir(directorio):
+        if tipo_archivo == "Imagenes" and (
+            filename.endswith(".jpg") or filename.endswith(".png")
+        ):
+            if not os.path.exists(directorio + "/Imagenes"):
+                os.makedirs(directorio + "/Imagenes")
+            shutil.move(
+                directorio + "/" + filename, directorio + "/Imagenes/" + filename
+            )
+        elif tipo_archivo == "Videos" and filename.endswith(".mp4"):
+            if not os.path.exists(directorio + "/Videos"):
+                os.makedirs(directorio + "/Videos")
+            shutil.move(directorio + "/" + filename, directorio + "/Videos/" + filename)
+        elif tipo_archivo == "Audios" and filename.endswith(".mp3"):
+            if not os.path.exists(directorio + "/Audios"):
+                os.makedirs(directorio + "/Audios")
+            shutil.move(directorio + "/" + filename, directorio + "/Audios/" + filename)
+        elif tipo_archivo == "Documentos" and (
+            filename.endswith(".docx") or filename.endswith(".pdf")
+        ):
+            if not os.path.exists(directorio + "/Documentos"):
+                os.makedirs(directorio + "/Documentos")
+            shutil.move(
+                directorio + "/" + filename, directorio + "/Documentos/" + filename
+            )
+
+
+root = Tk()
+root.geometry("200x200")
+
+tipo_archivo = StringVar()
+tipo_archivo.set("Imagenes")  # valor inicial
+
+boton_carpeta = ctk.CTkButton(
+    root, text="Seleccionar carpeta", command=seleccionar_carpeta
+)
+boton_carpeta.pack()
+
+opcion_imagenes = Radiobutton(
+    root, text="Imágenes", variable=tipo_archivo, value="Imagenes"
+)
+opcion_imagenes.pack()
+
+opcion_videos = Radiobutton(root, text="Videos", variable=tipo_archivo, value="Videos")
+opcion_videos.pack()
+
+opcion_audios = Radiobutton(root, text="Audios", variable=tipo_archivo, value="Audios")
+opcion_audios.pack()
+
+opcion_documentos = Radiobutton(
+    root, text="Documentos", variable=tipo_archivo, value="Documentos"
+)
+opcion_documentos.pack()
+
+boton_organizar = ctk.CTkButton(
+    root,
+    text="Organizar",
+    command=lambda: organizar_archivos(seleccionar_carpeta(), tipo_archivo.get()),
+)
+boton_organizar.pack()
+
+root.mainloop()
