@@ -1,14 +1,14 @@
-## Organizador de archivos por extensión
+## File organizer by extension
 
-Este código en Python utiliza la biblioteca `tkinter` para crear una interfaz gráfica básica que permite al usuario seleccionar una carpeta de destino. Luego, organiza los archivos en esa carpeta en diferentes subcarpetas según su extensión.
+This Python code uses the `tkinter` library to create a basic graphical interface that allows the user to select a destination folder. It then organizes the files in that folder into different subfolders according to their extension.
 
-### Pasos del código:
+### Steps of the code:
 
-~ Video de como usar el script
+~ Video on how to use the script
 
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/5gdPYvYhZnk?si=QDVzT6dAJlueAwID)
 
-~ Instala python desde: [Python downloads](https://www.python.org/downloads/)
+~ Install python from: [Python downloads](https://www.python.org/downloads/)
 
 ~Clone this repository
 
@@ -16,53 +16,53 @@ Este código en Python utiliza la biblioteca `tkinter` para crear una interfaz g
 git clone https://github.com/luisangelponcealvarez/OrganizadorDeArchivos.git
 ```
 
-~ Importación de las bibliotecas necesarias:
+~ Import required libraries:
 
-- `os`: Para operaciones de sistema de archivos.
+- `os`: For file system operations.
 
   ```
   pip install os
   ```
 
-- `shutil`: Para mover los archivos a las carpetas de destino.
+- `shutil`: To move files to destination folders.
 
   ```
   pip install shutil
   ```
 
-- `tkinter`: Para crear una interfaz gráfica simple.
+- `tkinter`: To create a simple graphical interface.
 
   ```
   pip install tkinter
   ```
 
-- `filedialog`: Para mostrar un cuadro de diálogo de selección de carpeta.
+- `filedialog`: To display a folder selection dialog box.
 
   ```
   pip install filedialog
   ```
 
-- `sys`: Para gestionar la salida del programa.
+- `sys`: To handle program exit.
   ```
   pip install sys
   ```
 
-Este código es útil para organizar archivos en una carpeta seleccionada por el usuario según sus extensiones, lo que facilita la gestión de archivos en un directorio desordenado.
+This code is useful for organizing files in a user-selected folder by their extensions, making it easier to manage files in a cluttered directory.
 
-### Pasos para usar el script
+### Steps to use the script
 
-1. Ejecute el script en un entorno Python.
+1. Run the script in a Python environment.
 
    ```
-   py OrganizadorDeArchivos.py
+   py FileOrganizer.py
    ```
 
-2. Al ejecutar el script, aparecerá una ventana de diálogo que le pedirá que seleccione la carpeta que desea organizar.
+2. When running the script, a dialog box will prompt you to select the folder you want to organize.
 
-3. Una vez seleccionada la carpeta, el script procederá a organizar los archivos en subcarpetas según sus extensiones.
+3. Once the folder is selected, the script will proceed to organize the files into subfolders according to their extensions.
 
-4. Después de que la organización se complete con éxito, se mostrará un cuadro de diálogo de información indicando que los archivos se han organizado correctamente.
+4. After organization is successfully completed, an info dialog box will be displayed indicating the files have been organized.
 
-5. Puede cerrar el script después de confirmar que los archivos han sido organizados.
+5. You can close the script after confirming the files have been organized.
 
-![miniatura](./miniatura.png)
+![thumbnail](./thumbnail.png)
