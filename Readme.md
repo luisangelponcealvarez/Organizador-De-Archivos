@@ -65,4 +65,4 @@ This code is useful for organizing files in a user-selected folder by their exte
 
 5. You can close the script after confirming the files have been organized.
 
-![thumbnail](./thumbnail.png)
+![thumbnail](./miniatura.png)
